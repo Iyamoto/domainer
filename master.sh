@@ -9,3 +9,11 @@ urls=$base"/urls.txt"
 cd $base/zone/
 $wget -i $urls -cN
 $gunzip *.gz
+
+oldfiles=`ls $base/zone | grep -v .gz`
+date=`date +%Y%m%d`
+echo $oldfiles
+for oldfile in $oldfiles
+do
+echo $oldfile-$date.txt
+done
